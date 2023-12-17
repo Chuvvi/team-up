@@ -14,7 +14,6 @@ async function fetchMailer() {
 
 export async function sendMail(template, to, subject, data) {
   try {
-    console.log("initiating sender");
     let sender = await fetchMailer();
     if (sender) {
       let transporter = await createTransport({

@@ -38,7 +38,6 @@ function Files() {
           header
         );
         setFile(data);
-        console.log(data);
       } catch (e) {
         if (e.response.status === 401) {
           alert(e.response.data.error);

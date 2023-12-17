@@ -24,8 +24,6 @@ function Meetings() {
         description: description,
         startDate: startDate,
       };
-      // console.log(data);
-      // console.log(typeof data);
       const idToken = await firebase.auth().currentUser.getIdToken();
       const header = {
         headers: {
@@ -37,13 +35,11 @@ function Meetings() {
         data,
         header
       );
-      console.log(res);
       // $('#StudentModal').modal('hide');
       setShow(false);
       navigate(`/workspace/${id}/tasks`);
     } catch (error) {
       alert(error.response.data.error);
-      // console.log(error);
     }
   };
   return (

@@ -14,7 +14,6 @@ module.exports = {
       _connection = await MongoClient.connect(url);
       _db = await _connection.db(process.env.DB_NAME);
     }
-    console.log("Connected :)");
 
     return _db;
   },

@@ -45,7 +45,6 @@ function SignUp() {
         await doCreateUserWithEmailAndPassword(email.value, passwordOne.value);
         let idToken = await firebase.auth().currentUser.getIdToken();
 
-        // console.log(idToken);
         try {
           let { data } = await axios.post(
             "http://localhost:4000/users/signup",
