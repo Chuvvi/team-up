@@ -9,7 +9,6 @@ export async function signUp(req, res) {
   try {
     let decodedToken = await admin.auth().verifyIdToken(token);
     if (decodedToken) {
-      // console.log(decodedToken);
       let uid = decodedToken.uid;
       let email = decodedToken.email;
       let name;
@@ -55,7 +54,6 @@ export async function login(req, res) {
   try {
     let decodedToken = await admin.auth().verifyIdToken(token);
     if (decodedToken) {
-      // console.log(decodedToken);
       let uid = decodedToken.uid;
       let email = decodedToken.email;
       const exisiting_user = await UserModels.findByEmail(email);

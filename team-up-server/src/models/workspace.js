@@ -6,7 +6,6 @@ const workspace = mongoCollections.workspace;
 import * as validation from "../services/validation";
 
 export async function createWorkspaceModel(name, createdBy) {
-  // console.log(typeof createdBy)
   createdBy = await validation.id(String(createdBy));
   name = await validation.checkString(name, "name");
   const WorkspaceCollection = await workspace();
@@ -35,16 +34,13 @@ export async function createWorkspaceModel(name, createdBy) {
 
 export async function getWorkspaceById(id) {
   id = await validation.id(id);
-  // console.log("Here");
   const WorkspaceCollection = await workspace();
   const workspaceFound = await WorkspaceCollection.findOne({
     _id: ObjectId(id),
   });
-  // console.log("Here", workspaceFound);
   if (!workspaceFound) {
     throw "No workspace found by this id";
   }
-  // console.log("Found");
   return workspaceFound;
 }
 
@@ -115,7 +111,6 @@ export async function verifyInvite(userId, token) {
 
 export async function getAllWorkspaceByUserId(userId) {
   userId = await validation.id(String(userId));
-  console.log(userId);
   const WorkspaceCollection = await workspace();
   const workspaceFound = await WorkspaceCollection.find({
     $or: [

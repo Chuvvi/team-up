@@ -32,7 +32,6 @@ function Workspace() {
           header
         );
         setWS(data);
-        console.log(data);
       } catch (e) {
         if (e.response.status === 401) {
           alert(e.response.data.error);
@@ -64,7 +63,6 @@ function Workspace() {
           header
         );
         SetMembers(data);
-        console.log(data);
       } catch (e) {
         if (e.response.status === 404) {
           setFNF(true);
@@ -104,7 +102,6 @@ function Workspace() {
           header
         );
         setInvited(true);
-        console.log(data);
       } else {
         // alert("Enter Valid Email");
         setError("Enter Valid Email Id");
@@ -153,7 +150,6 @@ function Workspace() {
     );
   }
   if (getMembers) {
-    console.log(getMembers);
     memeberList = (
       <ListGroup as="ol" numbered>
         {getMembers.map((elem) => {

@@ -369,10 +369,8 @@ export async function uploadFile(req, res) {
     if (!workspace) {
       return res.error(400, "workspace not found by this id");
     }
-    console.log(req.file);
     let originalname = req.file.originalname;
     let data = await S3.uploadFile(req.file, id);
-    console.log(data);
     let isUpdated = await workSpaceModels.uploadFile(
       id,
       data.Location,

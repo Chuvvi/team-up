@@ -63,7 +63,6 @@ function TaskModel() {
               Authorization: "Bearer " + idToken,
             },
           };
-          console.log(id);
           const res = await axios.post(
             `http://localhost:4000/workspace/task/${id}`,
             data,

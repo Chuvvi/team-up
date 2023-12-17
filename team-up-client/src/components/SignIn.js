@@ -54,7 +54,6 @@ function SignIn() {
           }
         );
         if (data) {
-          console.log(data);
           Cookies.set("user", data._id);
           Cookies.set("userName", data.name);
           if (data) {

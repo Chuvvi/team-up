@@ -38,7 +38,6 @@ function CreateWorkspace() {
           param,
           header
         );
-        console.log(data);
         document.getElementById("wsName").value = "";
         navigate(`/workspace/${data._id}`);
       }
