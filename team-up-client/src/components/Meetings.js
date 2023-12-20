@@ -31,7 +31,7 @@ function Meetings() {
         },
       };
       const res = await axios.post(
-        `http://localhost:4000/workspace/${id}/meetings`,
+        `http://${process.env.REACT_APP_SERVER_NAME}:4000/workspace/${id}/meetings`,
         data,
         header
       );

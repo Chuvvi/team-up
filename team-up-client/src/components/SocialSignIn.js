@@ -18,7 +18,7 @@ const SocialSignIn = () => {
       let idToken = await firebase.auth().currentUser.getIdToken();
       try {
         let { data } = await axios.post(
-          "http://localhost:4000/users/login",
+          `http://${process.env.REACT_APP_SERVER_NAME}:4000/users/login`,
           null,
           {
             headers: {
