@@ -47,7 +47,7 @@ function SignUp() {
 
         try {
           let { data } = await axios.post(
-            "http://localhost:4000/users/signup",
+            `http://${process.env.REACT_APP_SERVER_NAME}:4000/users/signup`,
             {
               name: name.value,
             },
