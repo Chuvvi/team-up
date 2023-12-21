@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, process.env.BUILD_PATH)))
+app.use(express.static(path.join(__dirname, process.env.BUILD_PATH)));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, process.env.BUILD_PATH, "index.html"));
 })
