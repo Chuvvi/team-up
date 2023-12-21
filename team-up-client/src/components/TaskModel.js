@@ -64,7 +64,7 @@ function TaskModel() {
             },
           };
           const res = await axios.post(
-            `http://${process.env.REACT_APP_SERVER_NAME}:4000/workspace/task/${id}`,
+            `https://${process.env.REACT_APP_SERVER_NAME}/workspace/task/${id}`,
             data,
             header
           );

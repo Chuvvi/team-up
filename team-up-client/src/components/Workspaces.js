@@ -21,7 +21,7 @@ function Workspaces() {
     };
     try {
       const { data } = await axios.get(
-        `http://${process.env.REACT_APP_SERVER_NAME}:4000/users/${userID}/workspace`,
+        `https://${process.env.REACT_APP_SERVER_NAME}/users/${userID}/workspace`,
         header
       );
       setWS(data);
@@ -69,7 +69,7 @@ function Workspaces() {
           Authorization: "Bearer " + idToken,
         },
       };
-      await axios.delete(`http://${process.env.REACT_APP_SERVER_NAME}:4000/workspace/${id}`, header);
+      await axios.delete(`https://${process.env.REACT_APP_SERVER_NAME}/workspace/${id}`, header);
       getWS();
     } catch (e) {
       console.log(e);
