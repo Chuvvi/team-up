@@ -43,7 +43,7 @@ function SignIn() {
         await doSignInWithEmailAndPassword(email.value, password.value);
         let idToken = await firebase.auth().currentUser.getIdToken();
         let { data } = await axios.post(
-          `https://${process.env.REACT_APP_SERVER_NAME}:4000/users/login`,
+          `http://${process.env.REACT_APP_SERVER_NAME}:4000/users/login`,
           null,
           {
             headers: {

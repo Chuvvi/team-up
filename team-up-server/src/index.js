@@ -2,12 +2,18 @@ import express from "express";
 import "dotenv/config";
 import ApiRoutes from "./routes";
 import cors from "cors";
+const path = require("path");
 
 const app = express();
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, process.env.BUILD_PATH)))
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, process.env.BUILD_PATH, "index.html"));
+})
 
 app.response.success = function (data) {
   this.status(200).send(data);

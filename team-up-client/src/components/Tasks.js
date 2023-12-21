@@ -34,7 +34,7 @@ function Tasks() {
     try {
       header = await getHeader();
       const { data } = await axios.get(
-        `https://${process.env.REACT_APP_SERVER_NAME}:4000/workspace/${id}/tasks`,
+        `http://${process.env.REACT_APP_SERVER_NAME}:4000/workspace/${id}/tasks`,
         header
       );
       setTaskList(data);
@@ -61,7 +61,7 @@ function Tasks() {
       };
       if (taskData.status === 2) dataa.isCompleted = true;
       await axios.patch(
-        `https://${process.env.REACT_APP_SERVER_NAME}:4000/workspace/task/${id}/${taskData._id}`,
+        `http://${process.env.REACT_APP_SERVER_NAME}:4000/workspace/task/${id}/${taskData._id}`,
         dataa,
         header
       );
@@ -82,7 +82,7 @@ function Tasks() {
     try {
       header = await getHeader();
       await axios.delete(
-        `https://${process.env.REACT_APP_SERVER_NAME}:4000/workspace/task/${id}/${taskID}`,
+        `http://${process.env.REACT_APP_SERVER_NAME}:4000/workspace/task/${id}/${taskID}`,
         header
       );
       await getData();

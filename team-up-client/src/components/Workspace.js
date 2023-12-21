@@ -28,7 +28,7 @@ function Workspace() {
           },
         };
         const { data } = await axios.get(
-          `https://${process.env.REACT_APP_SERVER_NAME}:4000/workspace/${id}`,
+          `http://${process.env.REACT_APP_SERVER_NAME}:4000/workspace/${id}`,
           header
         );
         setWS(data);
@@ -59,7 +59,7 @@ function Workspace() {
           },
         };
         const { data } = await axios.get(
-          `https://${process.env.REACT_APP_SERVER_NAME}:4000/workspace/${id}/members`,
+          `http://${process.env.REACT_APP_SERVER_NAME}:4000/workspace/${id}/members`,
           header
         );
         SetMembers(data);
@@ -97,7 +97,7 @@ function Workspace() {
           },
         };
         const { data } = await axios.post(
-          `https://${process.env.REACT_APP_SERVER_NAME}:4000/workspace/${id}/invite`,
+          `http://${process.env.REACT_APP_SERVER_NAME}:4000/workspace/${id}/invite`,
           param,
           header
         );
