@@ -71,7 +71,7 @@ export async function sendInvite(req, res) {
           name: `${res.locals.name}`,
           userName: userName,
           workspaceName: addToWorkspace.workspaceName,
-          url: `${process.env.INVITE_BASE_URL}/workspace/invite/${userId}/${addToWorkspace.memberToAdd.tempToken}`,
+          url: `${process.env.INVITE_BASE_URL}/#/workspace/invite/${userId}/${addToWorkspace.memberToAdd.tempToken}`,
         }
       );
       return res.success({
