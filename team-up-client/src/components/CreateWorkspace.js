@@ -34,7 +34,7 @@ function CreateWorkspace() {
           },
         };
         const { data } = await axios.post(
-          `https://${process.env.REACT_APP_SERVER_NAME}:4000/workspace/`,
+          `https://${process.env.REACT_APP_SERVER_NAME}/workspace/`,
           param,
           header
         );

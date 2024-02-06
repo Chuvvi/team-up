@@ -32,7 +32,7 @@ function EditTaskModel() {
           },
         };
         const { data } = await axios.get(
-          `https://${process.env.REACT_APP_SERVER_NAME}:4000/workspace/task/${id}/${taskID}`,
+          `https://${process.env.REACT_APP_SERVER_NAME}/workspace/task/${id}/${taskID}`,
           header
         );
         setTask(data);
@@ -87,7 +87,7 @@ function EditTaskModel() {
             },
           };
           const res = await axios.put(
-            `https://${process.env.REACT_APP_SERVER_NAME}:4000/workspace/task/${id}/${taskID}`,
+            `https://${process.env.REACT_APP_SERVER_NAME}/workspace/task/${id}/${taskID}`,
             data,
             header
           );

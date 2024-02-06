@@ -34,7 +34,7 @@ function Files() {
           },
         };
         const { data } = await axios.get(
-          `https://${process.env.REACT_APP_SERVER_NAME}:4000/workspace/${id}/files`,
+          `https://${process.env.REACT_APP_SERVER_NAME}/workspace/${id}/files`,
           header
         );
         setFile(data);
@@ -69,7 +69,7 @@ function Files() {
         },
       };
       const { data } = await axios.post(
-        `https://${process.env.REACT_APP_SERVER_NAME}:4000/workspace/${id}/files`,
+        `https://${process.env.REACT_APP_SERVER_NAME}/workspace/${id}/files`,
         formData,
         header
       );
